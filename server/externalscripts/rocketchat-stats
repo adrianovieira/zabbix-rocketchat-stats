@@ -44,7 +44,7 @@ def file_age_in_seconds(pathname):
 
 def statistics(api_url, headers_api, statsname):
     """
-    print JSON with statistics from API/v1 
+    print JSON with statistics from API/v1
     """
 
     endpoint = "%s/v1/statistics" % (api_url)
@@ -89,9 +89,9 @@ def statistics(api_url, headers_api, statsname):
             logging.critical("but storing status to %s failed : %s" % (statusfile, e))
 
     if statsname == "all":
-        pprint.pprint(data['statistics'])
-    elif statsname in data['statistics'].keys():
-        print(data['statistics'][statsname])
+        pprint.pprint(data)
+    elif statsname in data.keys():
+        print(data[statsname])
 
 
 if len(sys.argv) < 5:
